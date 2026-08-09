@@ -44,7 +44,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       anchor.addEventListener("click", (e: Event) => {
         const href = (anchor as HTMLAnchorElement).getAttribute("href")
         if (href === "#" || !href) return
-        const target = document.querySelector(href)
+        const target = document.querySelector<HTMLElement>(href)
         if (target) {
           e.preventDefault()
           lenis.scrollTo(target, { offset: -80, duration: 1.5 })

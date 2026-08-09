@@ -39,7 +39,7 @@ export default function Navbar() {
 
   const handleClick = (href: string) => {
     setOpen(false)
-    const el = document.querySelector(href)
+    const el = document.querySelector<HTMLElement>(href)
     if (el) {
       if (window.__lenis) {
         window.__lenis.scrollTo(el, { offset: -80, duration: 1.5 })
