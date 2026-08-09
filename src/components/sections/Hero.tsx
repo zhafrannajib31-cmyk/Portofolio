@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { motion, useReducedMotion } from "motion/react"
 import OrbitImages from "@/components/OrbitImages"
 import FloatingParticles from "@/components/FloatingParticles"
@@ -22,15 +21,6 @@ const orbitImages = [
 export default function Hero() {
   const { t } = useLanguage()
   const reduce = useReducedMotion()
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)")
-    setIsMobile(mq.matches)
-    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mq.addEventListener("change", onChange)
-    return () => mq.removeEventListener("change", onChange)
-  }, [])
 
   return (
     <section
@@ -99,7 +89,7 @@ export default function Hero() {
         className="pointer-events-none relative w-full max-w-[19rem] sm:max-w-[24rem] lg:absolute lg:right-40 lg:top-1/2 lg:z-[1] lg:-translate-y-1/2 lg:w-[24rem] lg:max-w-none xl:right-44 xl:w-[30rem]"
       >
         <motion.div
-          animate={reduce || isMobile ? undefined : { y: [0, -14, 0] }}
+animate={reduce ? undefined : { y: [0, -14, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           <OrbitImages
@@ -118,7 +108,6 @@ export default function Hero() {
           pathColor="rgba(11, 27, 63, 0.45)"
           pathWidth={2}
           responsive
-          paused={isMobile}
           centerContent={
             <div className="h-[42vh] w-40 sm:h-[48vh] sm:w-48 lg:h-[62vh] lg:w-56 xl:w-64">
               <img
