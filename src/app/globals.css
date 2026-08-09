@@ -89,6 +89,13 @@ html {
   }
 }
 
+@media (max-width: 767px) {
+  .blob {
+    animation: none !important;
+    filter: blur(28px) !important;
+  }
+}
+
 :root {
   --background: #f0f7ff;
   --foreground: #0b1b3f;

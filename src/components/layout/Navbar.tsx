@@ -54,7 +54,7 @@ export default function Navbar() {
       initial={reduce ? false : { y: -96, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed inset-x-0 top-0 z-50 h-16 border-b border-slate-200/40 bg-white/60 backdrop-blur-xl shadow-sm"
+      className="fixed inset-x-0 top-0 z-50 h-16 border-b border-slate-200/40 bg-white/95 backdrop-blur-sm shadow-sm md:bg-white/60 md:backdrop-blur-xl"
     >
       <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <a
