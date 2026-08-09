@@ -223,7 +223,7 @@ export default function Experience() {
                 {cards.map((card, index) => {
                   const baseClassName = `card flex flex-col justify-between relative min-h-[220px] w-full sm:min-h-[250px] p-6 sm:p-10 rounded-[22px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] card--border-glow`
 
-                  const cardStyle: React.CSSProperties = {
+                  const cardStyle = {
                     backgroundColor: '#FFFFFF',
                     borderColor: '#D9EAF7',
                     color: '#0B1B3F',
@@ -231,7 +231,7 @@ export default function Experience() {
                     '--glow-y': '50%',
                     '--glow-intensity': '0',
                     '--glow-radius': '200px'
-                  }
+                  } as React.CSSProperties
 
                   return (
                     <RevealItem key={index}>
